@@ -1,0 +1,19 @@
+version: '3'
+services:
+   geth-node :
+    image: ethereum/client-go:v1.10.21
+    restart: on-failure
+    ports:
+      - "8545:8545"
+      - "30303:30303"    
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 100
+        window: 10020s
+    container_name:  geth-node
+    command: '--datadir=/root --http --http.port=8545 --http.addr=0.0.0.0 --http.vhosts=* --http.api=eth,net,engine,admin -cache 3072 --authrpc.vhosts=* --authrpc.jwtsecret=/jwt/jwt.hex'
+    volumes:
+    - /home/ec2-user/.geth:/root
+    - /home/ec2-user/JWT:/jwt
