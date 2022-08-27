@@ -10,6 +10,7 @@ sudo cp geth.service  /etc/systemd/system/geth.service
 sudo systemctl daemon-reload
 
 echo "Stopping the geth service"
+docker stop -t 180 geth-node
 sudo systemctl stop geth
 docker rm geth-node
 docker rmi public.ecr.aws/n2u0q7l0/geth:stable
