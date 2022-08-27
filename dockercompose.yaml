@@ -1,7 +1,7 @@
 version: '3'
 services:
    geth-node :
-    image: ethereum/client-go:v1.10.21
+    image: public.ecr.aws/n2u0q7l0/geth:stable 
     restart: on-failure
     ports:
       - "8545:8545"
