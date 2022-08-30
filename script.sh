@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/yashLN/Geth_Presync/main/dockercompose.ya
 wget https://raw.githubusercontent.com/yashLN/Geth_Presync/main/geth.service
 
 echo "Apply the new service"
-sudo cp dockercompose.yaml /var/tmp/dockercompose.yaml
+sudo cp dockercompose.yaml /var/tmp/docker-compose.yaml
 sudo cp geth.service  /etc/systemd/system/geth.service
 sudo systemctl daemon-reload
 
