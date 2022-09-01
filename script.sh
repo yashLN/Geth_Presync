@@ -19,3 +19,4 @@ echo "generating hex file"
 openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
 
 sudo systemctl start geth
+sudo rm -rf dockercompose.yaml geth.service
