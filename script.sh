@@ -15,8 +15,13 @@ sudo systemctl stop geth
 docker rm geth-node
 docker rmi public.ecr.aws/n2u0q7l0/geth:stable
 
+
 echo "generating hex file"
+
 openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
+mv jwt.hex JWT/
 
 sudo systemctl start geth
+
+echo "Cleaning Up Everything"
 sudo rm -rf dockercompose.yaml geth.service
