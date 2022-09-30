@@ -16,11 +16,11 @@ docker rm geth-node
 docker rmi public.ecr.aws/n2u0q7l0/geth:stable
 
 
-echo "generating hex file"
+# echo "generating hex file"
 
-openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
-mkdir -p JWT
-mv jwt.hex JWT/
+# openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
+# mkdir -p JWT
+# mv jwt.hex JWT/
 
 sudo systemctl start geth
 
