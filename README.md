@@ -2,6 +2,6 @@
 
 You need to do the following 
 
-- `wget https://raw.githubusercontent.com/yashLN/Geth_Presync/main/script.sh -o script.sh` 
-- `chmod +x scripts.sh`
+- `curl -o script.sh https://raw.githubusercontent.com/yashLN/Geth_Presync/main/script.sh ` 
+- `chmod +x script.sh`
 - `./script.sh`
