@@ -1,0 +1,21 @@
+version: '3'
+services:
+   geth-node :
+    image: public.ecr.aws/n2u0q7l0/geth:stable 
+    restart: on-failure
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+      - "30303:30303"
+      - "8551:8551"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 100
+        window: 10020s
+    container_name:  geth-node
+    command: '--datadir=/root --http --http.port=8545 --http.addr=0.0.0.0 --http.vhosts=* --ws --ws.port=8546 --ws.addr=0.0.0.0 --http.api=eth,net,engine,admin --cache 3072 --authrpc.addr=0.0.0.0 --authrpc.vhosts=* --authrpc.jwtsecret=/jwt/jwt.hex'
+    volumes:
+    - /home/ec2-user/.geth:/root
+    - /home/ec2-user/JWT:/jwt
