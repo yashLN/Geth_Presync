@@ -5,7 +5,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/var/tmp
+WorkingDirectory=/var
 ExecStart=/usr/local/bin/docker-compose up -d  
 ExecStop=/usr/local/bin/docker-compose down -t 180
 TimeoutStartSec=0
